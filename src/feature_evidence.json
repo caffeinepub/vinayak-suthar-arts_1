@@ -1,0 +1,43 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-android-release-aab-build-process-so-it-produces-a-clearly-named-easy-to-download-share-build-artifact-in-a-stable-output-directory-in-addition-to-gradle-s-default-output-path",
+      "featureTitle": "Update the Android release AAB build process so it produces a clearly named, easy-to-download/share build artifact in a stable output directory (in addition to Gradle’s default output path).",
+      "files": [
+        "frontend/android-wrapper/.gitignore",
+        "frontend/scripts/android/build-release-aab.sh"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-android-aab-documentation-to-include-a-short-explicit-where-to-find-the-aab-file-to-download-share-section-that-points-to-the-stable-output-location-produced-by-the-build-script",
+      "featureTitle": "Update the Android AAB documentation to include a short, explicit 'Where to find the AAB file to download/share' section that points to the stable output location produced by the build script.",
+      "files": [
+        "frontend/android-wrapper/README.md",
+        "frontend/docs/ANDROID_AAB.md"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

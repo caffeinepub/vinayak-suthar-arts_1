@@ -1,0 +1,59 @@
+{
+  "kind": "build_request",
+  "title": "Produce a downloadable signed release Android App Bundle (.aab) artifact",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-10",
+      "text": "Update the Android release AAB build process so it produces a clearly named, easy-to-download/share build artifact in a stable output directory (in addition to Gradle’s default output path).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Download aab file"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Running the release build script results in the original AAB still being generated at: frontend/android-wrapper/twa/app/build/outputs/bundle/release/app-release.aab",
+        "The build script also copies the generated AAB to a stable, human-friendly path under frontend/android-wrapper (for example: frontend/android-wrapper/out/app-release.aab, or another clearly documented fixed location)",
+        "The stable output directory is created automatically if it does not exist",
+        "The script prints the stable output file path at the end so a user can locate and download/share it immediately",
+        "The repository ignores the stable output directory and build artifacts via .gitignore (to avoid committing large binaries)"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Update the Android AAB documentation to include a short, explicit 'Where to find the AAB file to download/share' section that points to the stable output location produced by the build script.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Download aab file"
+        ]
+      },
+      "acceptanceCriteria": [
+        "frontend/docs/ANDROID_AAB.md (and/or the android-wrapper README) explicitly states the final stable path where the AAB will be available after a successful release build",
+        "Documentation is in English and includes the exact filename and directory to look in after building",
+        "Documentation matches the actual behavior/output path of the build script"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not introduce any backend changes; the AAB build and download/share flow must be fully frontend/repo-local tooling.",
+    "Keep the backend as a single Motoko actor; do not add additional canisters or services.",
+    "Do not modify files under frontend/src/components/ui or other immutablePaths; compose existing UI components if UI changes are needed (not expected for this request)."
+  ],
+  "nonGoals": [
+    "Hosting or serving the .aab file for download from within the web app itself.",
+    "Adding CI/CD pipelines or external build hosting.",
+    "Changing the TWA approach (Bubblewrap/Gradle) to a different Android packaging technology."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

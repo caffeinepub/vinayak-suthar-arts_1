@@ -1,0 +1,35 @@
+# Android wrapper build outputs
+twa/
+
+# Stable AAB output directory
+out/
+*.aab
+
+# Sensitive signing files - NEVER COMMIT THESE
+*.keystore
+*.jks
+keystore.properties
+local.properties
+
+# Android Studio / Gradle
+.gradle/
+.idea/
+*.iml
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Bubblewrap generated files
+.bubblewrap/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+

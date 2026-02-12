@@ -1,0 +1,47 @@
+{
+  "host": "https://YOUR_DEPLOYED_SITE_URL.com",
+  "name": "Vinayak Suthar Arts",
+  "launcherName": "VS Arts",
+  "display": "standalone",
+  "themeColor": "#000000",
+  "backgroundColor": "#ffffff",
+  "startUrl": "/",
+  "iconUrl": "https://YOUR_DEPLOYED_SITE_URL.com/assets/generated/vsa-app-icon.dim_512x512.png",
+  "maskableIconUrl": "https://YOUR_DEPLOYED_SITE_URL.com/assets/generated/vsa-app-icon.dim_512x512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "./release-key.keystore",
+    "alias": "release-key"
+  },
+  "appVersionName": "1.0.0",
+  "appVersionCode": 1,
+  "shortcuts": [],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://YOUR_DEPLOYED_SITE_URL.com/manifest.webmanifest",
+  "fallbackType": "customtabs",
+  "features": {
+    "locationDelegation": {
+      "enabled": false
+    },
+    "playBilling": {
+      "enabled": false
+    }
+  },
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableNotifications": false,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "minSdkVersion": 21,
+  "targetSdkVersion": 34,
+  "orientation": "default",
+  "navigationColor": "#000000",
+  "navigationColorDark": "#000000",
+  "navigationDividerColor": "#000000",
+  "navigationDividerColorDark": "#000000",
+  "packageId": "com.vinayaksuthararts.app",
+  "shareTarget": {},
+  "enableSiteSettingsShortcut": true,
+  "monochromeIconUrl": "https://YOUR_DEPLOYED_SITE_URL.com/assets/generated/vsa-app-icon.dim_512x512.png"
+}

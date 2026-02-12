@@ -1,0 +1,125 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 11,
+  "summary": "Static two-page website for \"Vinayak Suthar Arts\" with a homepage gallery and a WhatsApp-based commission/order form, plus packaging the site into an Android app (AAB) for Google Play distribution.",
+  "architectural_notes": [
+    "Site is plain HTML/CSS/JS with a WhatsApp deep-link used to submit the order form (wa.me).",
+    "Add an Android wrapper (likely WebView-based) to package the existing static site into an AAB for Play Store distribution."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-replace-the-4-existing-homepage-gallery-images-currently-referenced-as-images-artworks-sample1-jpg-through-sample4-jpg-with-the-user-uploaded-artwork-photos-and-ensure-clicking-a-thumbnail-opens-the-corresponding-full-size-image",
+      "title": "Replace the 4 existing homepage gallery images (currently referenced as images/artworks/sample1.jpg through sample4.jpg) with the user-uploaded artwork photos, and ensure clicking a thumbnail opens the corresponding full-size image.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-homepage-hero-featured-artwork-image-currently-images-artworks-sample1-jpg-to-use-one-of-the-uploaded-artwork-photos-use-inshot-20260113-205558602-jpg-unless-another-image-is-specified-elsewhere",
+      "title": "Update the homepage hero 'Featured Artwork' image (currently images/artworks/sample1.jpg) to use one of the uploaded artwork photos (use InShot_20260113_205558602.jpg unless another image is specified elsewhere).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-uploaded-image-files-to-the-frontend-as-static-assets-and-reference-them-via-stable-paths-suitable-for-production-builds-do-not-load-them-through-the-backend",
+      "title": "Add the uploaded image files to the frontend as static assets and reference them via stable paths suitable for production builds (do not load them through the backend).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-visual-theme-across-the-two-pages-home-and-order-using-tailwind-css-and-existing-ui-composition-patterns-clean-minimal-black-white-gray-palette-serif-headline-typography-paired-with-sans-serif-body-and-consistent-spacing-radius-for-cards-buttons-and-sections-do-not-introduce-blue-purple",
+      "title": "Apply a coherent visual theme across the two pages (home and order) using Tailwind CSS and existing UI composition patterns: clean minimal black/white/gray palette, serif headline typography paired with sans-serif body, and consistent spacing/radius for cards, buttons, and sections (do not introduce blue/purple).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-clear-step-by-step-build-guide-to-package-the-existing-vinayak-suthar-arts-web-app-into-an-android-app-bundle-aab-suitable-for-google-play-upload-using-a-webview-twa-style-wrapper-no-backend-involvement-the-guide-must-be-written-in-english-and-include-prerequisites-configuration-values-to-choose-applicationid-package-name-app-name-versioning-how-to-point-the-wrapper-to-the-deployed-site-url-how-to-generate-sign-the-release-bundle-and-how-to-locate-the-resulting-aab-file",
+      "title": "Add a clear, step-by-step build guide to package the existing Vinayak Suthar Arts web app into an Android App Bundle (AAB) suitable for Google Play upload using a WebView/TWA-style wrapper (no backend involvement). The guide must be written in English and include prerequisites, configuration values to choose (applicationId/package name, app name, versioning), how to point the wrapper to the deployed site URL, how to generate/sign the release bundle, and how to locate the resulting .aab file.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-pwa-style-metadata-and-static-assets-required-for-android-wrapper-packaging-include-a-web-app-manifest-app-icons-and-basic-html-meta-tags-so-the-site-has-stable-app-identity-name-icons-theme-color-when-wrapped-into-an-android-app-reference-these-assets-via-stable-frontend-public-paths-do-not-serve-through-the-backend",
+      "title": "Add PWA-style metadata and static assets required for Android wrapper packaging: include a web app manifest, app icons, and basic HTML meta tags so the site has stable app identity (name, icons, theme color) when wrapped into an Android app. Reference these assets via stable frontend public paths (do not serve through the backend).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-generated-app-icon-images-to-the-frontend-as-static-assets-under-frontend-public-assets-generated-and-wire-them-into-the-web-manifest-and-html-head",
+      "title": "Add the generated app icon images to the frontend as static assets under frontend/public/assets/generated and wire them into the web manifest and HTML head.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-repository-local-reproducible-android-wrapper-build-setup-twa-webview-style-so-the-project-can-generate-a-google-play-ready-release-android-app-bundle-aab-from-the-deployed-vinayak-suthar-arts-website-url-without-requiring-any-backend-changes",
+      "title": "Add a repository-local, reproducible Android wrapper build setup (TWA/WebView-style) so the project can generate a Google Play-ready **release** Android App Bundle (.aab) from the deployed Vinayak Suthar Arts website URL, without requiring any backend changes.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-extend-the-existing-android-aab-documentation-so-that-a-user-can-reliably-locate-and-share-the-exact-generated-aab-output-file-after-the-release-build-and-confirm-it-is-suitable-for-google-play-upload-signed-release-bundle",
+      "title": "Update/extend the existing Android AAB documentation so that a user can reliably locate and share the exact generated **.aab** output file after the release build, and confirm it is suitable for Google Play upload (signed release bundle).",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-android-release-aab-build-process-so-it-produces-a-clearly-named-easy-to-download-share-build-artifact-in-a-stable-output-directory-in-addition-to-gradle-s-default-output-path",
+      "title": "Update the Android release AAB build process so it produces a clearly named, easy-to-download/share build artifact in a stable output directory (in addition to Gradle’s default output path).",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-android-aab-documentation-to-include-a-short-explicit-where-to-find-the-aab-file-to-download-share-section-that-points-to-the-stable-output-location-produced-by-the-build-script",
+      "title": "Update the Android AAB documentation to include a short, explicit 'Where to find the AAB file to download/share' section that points to the stable output location produced by the build script.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Replace the 4 existing gallery images (sample1-4) in index.html with the user-provided images.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Build an Android App Bundle (AAB) version of the website suitable for upload to Google Play (e.g., WebView wrapper).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Produce a downloadable Android App Bundle (.aab) build artifact for the current site (Google Play-ready release build).",
+      "reqIds": [],
+      "status": "in_progress"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Vinayak Suthar Arts",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

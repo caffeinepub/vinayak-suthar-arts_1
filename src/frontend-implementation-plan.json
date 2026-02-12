@@ -1,0 +1,51 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Stable, downloadable Android release AAB artifact output",
+  "requirements": [
+    {
+      "id": "REQ-10",
+      "summary": "Produce a clearly named release .aab in a stable output directory under frontend/android-wrapper in addition to Gradle’s default output path.",
+      "acceptanceCriteria": [
+        "Running the release build script results in the original AAB still being generated at: frontend/android-wrapper/twa/app/build/outputs/bundle/release/app-release.aab",
+        "The build script also copies the generated AAB to a stable, human-friendly path under frontend/android-wrapper (for example: frontend/android-wrapper/out/app-release.aab, or another clearly documented fixed location)",
+        "The stable output directory is created automatically if it does not exist",
+        "The script prints the stable output file path at the end so a user can locate and download/share it immediately",
+        "The repository ignores the stable output directory and build artifacts via .gitignore (to avoid committing large binaries)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/scripts/android/build-release-aab.sh",
+          "operation": "modify",
+          "description": "After confirming the Gradle-generated AAB exists, create a stable output directory under frontend/android-wrapper (e.g., WRAPPER_DIR/out), copy the AAB to frontend/android-wrapper/out/app-release.aab, and print the stable output file path at the end of the script while preserving the existing Gradle output behavior."
+        },
+        {
+          "path": "frontend/android-wrapper/.gitignore",
+          "operation": "modify",
+          "description": "Add ignore rules for the stable AAB output directory and copied build artifacts (e.g., ignore android-wrapper/out/ and any .aab files placed there) so generated binaries are not committed."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Document exactly where to find the downloadable/shareable AAB produced by the updated release build script.",
+      "acceptanceCriteria": [
+        "frontend/docs/ANDROID_AAB.md (and/or the android-wrapper README) explicitly states the final stable path where the AAB will be available after a successful release build",
+        "Documentation is in English and includes the exact filename and directory to look in after building",
+        "Documentation matches the actual behavior/output path of the build script"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/docs/ANDROID_AAB.md",
+          "operation": "modify",
+          "description": "Add a short, explicit section titled \"Where to find the AAB file to download/share\" that states the exact stable output path and filename produced by the build script (e.g., frontend/android-wrapper/out/app-release.aab) and notes that the original Gradle output path is still produced."
+        },
+        {
+          "path": "frontend/android-wrapper/README.md",
+          "operation": "modify",
+          "description": "Complete/update the \"Output Location\" section to explicitly point to the stable, human-friendly AAB path produced after a successful release build (e.g., frontend/android-wrapper/out/app-release.aab), ensuring it matches the build-release-aab.sh behavior."
+        }
+      ]
+    }
+  ]
+}

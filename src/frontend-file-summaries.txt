@@ -1,0 +1,19 @@
+{
+  "frontend/src/App.tsx": "Main application component that sets up TanStack Router with routes for home and order pages, wrapped in a Layout component.",
+  "frontend/src/components/Layout.tsx": "Shared layout component with sticky header navigation, mobile menu, and footer with social links and attribution.",
+  "frontend/src/pages/HomePage.tsx": "Homepage featuring hero section with featured artwork, gallery grid of all 10 uploaded images with lightbox, features cards, why choose section, and about artist section.",
+  "frontend/src/pages/OrderPage.tsx": "Commission order form page with all required fields that submits via WhatsApp deep link.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for future React Query hooks to interact with backend.",
+  "frontend/index.css": "Global styles with Playfair Display serif font for headings and Inter for body text, maintaining black/white/gray OKLCH color system.",
+  "frontend/tailwind.config.js": "Tailwind configuration with custom serif/sans font families (Playfair Display and Inter) and extended design tokens.",
+  "frontend/src/main.tsx": "Application entry point that sets up React Query and Internet Identity providers, with CSS import path corrected to ./index.css (same directory).",
+  "frontend/docs/ANDROID_AAB.md": "Comprehensive English guide covering the complete AAB build process including required inputs, keystore generation, build steps, a dedicated section explicitly stating the stable output path (frontend/android-wrapper/out/app-release.aab) for downloading/sharing, verification methods, troubleshooting, and Google Play upload instructions.",
+  "frontend/public/manifest.webmanifest": "PWA web app manifest with app identity metadata (name, icons, theme colors, display mode) referencing the generated icon assets for Android wrapper discovery.",
+  "frontend/index.html": "HTML entry point updated with PWA metadata including manifest link, theme color meta tags, app-capable tags, and icon references to the generated app icons for stable app identity.",
+  "frontend/android-wrapper/README.md": "Overview of the Android wrapper setup with quick start instructions, explicit documentation of the stable output location (frontend/android-wrapper/out/app-release.aab) for downloading/sharing the AAB after a successful build, and pointer to detailed documentation.",
+  "frontend/android-wrapper/bubblewrap.config.json": "Bubblewrap configuration template with all required TWA settings including app identity, versioning, icons, and package details for reproducible wrapper generation.",
+  "frontend/android-wrapper/keystore.example.properties": "Example properties file documenting the required signing configuration variables (keystore path, passwords, alias) with instructions for users to generate their own credentials.",
+  "frontend/android-wrapper/.gitignore": "Git ignore rules for the Android wrapper directory that protect sensitive signing files, build outputs, the stable AAB output directory (out/), and generated binaries from being committed.",
+  "frontend/scripts/android/update-wrapper.sh": "Bash script that validates configuration and generates/updates the Android TWA wrapper project using Bubblewrap CLI with the checked-in config.",
+  "frontend/scripts/android/build-release-aab.sh": "Bash script that builds a signed release Android App Bundle, validates signing configuration, copies the AAB to a stable output directory (frontend/android-wrapper/out/app-release.aab), and reports both the original Gradle output path and the stable download path."
+}

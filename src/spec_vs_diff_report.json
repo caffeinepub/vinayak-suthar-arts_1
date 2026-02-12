@@ -1,0 +1,46 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-12T15:25:39.724Z",
+  "summary": "REQ-10 and REQ-11 appear implemented: a release build script copies the generated AAB to a stable frontend/android-wrapper/out/app-release.aab path (creating the directory, printing the path), the stable output is gitignored, and documentation points to the stable location. However, the diff also includes many additional unrelated frontend/UI and PWA changes not requested by this BuildRequest.",
+  "missing_requirements": [],
+  "hallucinated_features": [
+    {
+      "description": "Large set of unrelated frontend UI/page styling and routing changes (App/Layout/HomePage/OrderPage, Tailwind, CSS) not requested for “downloadable signed release AAB artifact”.",
+      "reason": "BuildRequest focuses only on Android AAB build artifact output + documentation; no UI/theme/page work requested, and constraints warn against unnecessary UI changes.",
+      "evidence": [
+        "frontend-file-summaries.txt (entries for frontend/src/App.tsx, frontend/src/components/Layout.tsx, frontend/src/pages/HomePage.tsx, frontend/src/pages/OrderPage.tsx, frontend/index.css, frontend/tailwind.config.js, frontend/src/main.tsx)"
+      ]
+    },
+    {
+      "description": "Added/updated PWA metadata and manifest/icon references (webmanifest + index.html) for Android wrapper discovery.",
+      "reason": "Not requested by REQ-10/REQ-11; BuildRequest explicitly targets stable AAB output and documentation only.",
+      "evidence": [
+        "frontend-file-summaries.txt (entries for frontend/public/manifest.webmanifest, frontend/index.html)"
+      ]
+    },
+    {
+      "description": "Introduced/updated Bubblewrap wrapper configuration and wrapper update tooling (bubblewrap.config.json, update-wrapper.sh) beyond the stable-output build artifact request.",
+      "reason": "BuildRequest non-goal says not changing TWA approach, but it does not ask to add wrapper generation scripts/config; only to adjust release build output location and docs.",
+      "evidence": [
+        "frontend-file-summaries.txt (entries for frontend/android-wrapper/bubblewrap.config.json, frontend/scripts/android/update-wrapper.sh)"
+      ]
+    },
+    {
+      "description": "Added example signing configuration template (keystore.example.properties).",
+      "reason": "Not requested by REQ-10/REQ-11 (docs and stable artifact output); this is additional setup scaffolding.",
+      "evidence": [
+        "frontend-file-summaries.txt (entry for frontend/android-wrapper/keystore.example.properties)"
+      ]
+    }
+  ],
+  "confidence": 0.72,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/android-wrapper/.gitignore",
+    "frontend/android-wrapper/README.md",
+    "frontend/docs/ANDROID_AAB.md",
+    "frontend/scripts/android/build-release-aab.sh",
+    "project_state.json"
+  ]
+}

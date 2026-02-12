@@ -1,0 +1,55 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-12T15:25:39.727Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 2,
+    "items": [
+      {
+        "id": "REQ-10",
+        "summary": "Update the Android release AAB build process so it produces a clearly named, easy-to-download/share build artifact in a stable output directory (in addition to Gradle’s default output path).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/scripts/android/build-release-aab.sh",
+          "frontend/android-wrapper/.gitignore"
+        ],
+        "matchedFiles": [
+          "frontend/scripts/android/build-release-aab.sh",
+          "frontend/android-wrapper/.gitignore"
+        ]
+      },
+      {
+        "id": "REQ-11",
+        "summary": "Update the Android AAB documentation to include a short, explicit 'Where to find the AAB file to download/share' section that points to the stable output location produced by the build script.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/docs/ANDROID_AAB.md",
+          "frontend/android-wrapper/README.md"
+        ],
+        "matchedFiles": [
+          "frontend/docs/ANDROID_AAB.md",
+          "frontend/android-wrapper/README.md"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/android-wrapper/.gitignore",
+    "frontend/android-wrapper/README.md",
+    "frontend/docs/ANDROID_AAB.md",
+    "frontend/scripts/android/build-release-aab.sh",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}
